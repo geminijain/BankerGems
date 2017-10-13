@@ -1,0 +1,6 @@
+c:\users\gems\documents\visual studio 2017\Projects\BankerGems\bin\Debug\BankerGems.exe.config
+c:\users\gems\documents\visual studio 2017\Projects\BankerGems\bin\Debug\BankerGems.exe
+c:\users\gems\documents\visual studio 2017\Projects\BankerGems\bin\Debug\BankerGems.pdb
+c:\users\gems\documents\visual studio 2017\Projects\BankerGems\obj\Debug\BankerGems.csprojResolveAssemblyReference.cache
+c:\users\gems\documents\visual studio 2017\Projects\BankerGems\obj\Debug\BankerGems.exe
+c:\users\gems\documents\visual studio 2017\Projects\BankerGems\obj\Debug\BankerGems.pdb
