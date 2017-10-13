@@ -21,6 +21,7 @@ namespace BankerGems
     {
         private static int lastAccountNumber = 0;
 
+
         #region Properties
         /// <summary>
         /// properties of account class
@@ -38,6 +39,7 @@ namespace BankerGems
         public Account()
         {
             AccountNumber = ++lastAccountNumber;            //pre increment to lastAccountNumber and assign to AccountNumber;
+            CreatedDate = DateTime.UtcNow;
         }
         #endregion
 

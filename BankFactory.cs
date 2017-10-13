@@ -9,7 +9,10 @@ namespace BankerGems
 /// factory design pattern implementation
 /// </summary>
     public static class BankFactory
-    {/// <summary>
+    {
+        private static List<Account> accounts = new List<Account>();
+        
+        /// <summary>
     /// bankFactory creats an account
     /// </summary>
     /// <param name="emailAddress"> email address of the account</param>
@@ -29,6 +32,11 @@ namespace BankerGems
                 account.Deposit(initialDeposit);
             }
             return account;
+        }
+
+        public static List<Account> getAllAccounts()
+        {
+            return accounts;
         }
     }
 }
