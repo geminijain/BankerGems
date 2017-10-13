@@ -11,17 +11,40 @@ namespace BankerGems
     /// </summary>
     class Account
     {
+        private static int lastAccountNumber = 0;
+
         #region Properties
         /// <summary>
         /// properties of account class
         /// </summary>
 
-        public int AccountNumber { get; set; } 
+        public int AccountNumber { get; } 
         public string EmailAddress { get; set; }
-        public decimal Balance { get; set;}
+        public decimal Balance { get; private set; }
 
         public string AccountType { get; set; }
         public DateTime CreatedDate { get; set; }
-#endregion   
+        #endregion
+
+        #region Constructors
+        public Account()
+        {
+            AccountNumber = ++lastAccountNumber;            //pre increment to lastAccountNumber and assign to AccountNumber;
+        }
+        #endregion
+
+
+        #region Method
+        public decimal Deposit(decimal amount)
+        {
+            Balance += amount;              // balance = balance + amount
+            return Balance;
+        }
+
+        public void Withdraw(decimal amount)
+        {
+            Balance -= amount;              // balance = balance - amount
+        }
+        #endregion
     }
 }
