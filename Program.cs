@@ -10,19 +10,10 @@ namespace BankerGems
     {
         static void Main(string[] args)
         {
-            // instantiate an object
-            var account = new Account();
-           // account.AccountNumber = 1234;
-            account.EmailAddress = "test@test.com";
-            account.AccountType = "Savings";
-            // account.Balance = 198429308423;
-
-            account.Deposit(100);
-
+            var account = BankFactory.CreateAccount("test@test.com", TypeOfAccount.Savings);
             Console.WriteLine($"AN : {account.AccountNumber}, EA: { account.EmailAddress}, Balance : {account.Balance:C}, AT : {account.AccountType}");
 
-            var account2 = new Account();
-
+            var account2 = BankFactory.CreateAccount("test2@test.com", initialDeposit : 500);
             Console.WriteLine($"AN : {account2.AccountNumber}, EA: { account2.EmailAddress}, Balance : {account2.Balance:C}, AT : {account2.AccountType}");
         }
     }

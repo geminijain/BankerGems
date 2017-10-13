@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace BankerGems
 {
+    public enum TypeOfAccount
+    {
+        Checking,
+        Savings,
+        Loan,
+        CD
+    }
+
     /// <summary>
     /// implementation of account class
     /// </summary>
-    class Account
+    public class Account
     {
         private static int lastAccountNumber = 0;
 
@@ -22,7 +30,7 @@ namespace BankerGems
         public string EmailAddress { get; set; }
         public decimal Balance { get; private set; }
 
-        public string AccountType { get; set; }
+        public TypeOfAccount AccountType { get; set; }
         public DateTime CreatedDate { get; set; }
         #endregion
 
