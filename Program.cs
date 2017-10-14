@@ -41,7 +41,7 @@ namespace BankerGems
                         Console.Write("Amount to deposit: ");
                         var amount = Convert.ToDecimal(Console.ReadLine());
                         var account = BankFactory.CreateAccount(emailAddress, accountType, amount);
-                        Console.WriteLine($"AN: {account.AccountNumber}, AT: {account.AccountType}, Balance: {account.Balance: C}, Created Date:{account.CreatedDate}");
+                        Console.WriteLine($"AN: {account.AccountNumber}, AT: {account.AccountType}, Balance: {account.Balance:C}, Created Date:{account.CreatedDate}");
                         break;
 
                     case "2":
@@ -51,7 +51,9 @@ namespace BankerGems
                         break;
 
                     case "4":
-                        var accounts = BankFactory.getAllAccounts();
+                        Console.Write("Email Address :"); 
+                        emailAddress = Console.ReadLine();
+                        var accounts = BankFactory.getAllAccounts(emailAddress);
                         foreach(var item in accounts)
                         {
                             Console.WriteLine($"AN: {item.AccountNumber}, AT: {item.AccountType}, Balance: {item.Balance:C}, Created Date:{item.CreatedDate}");

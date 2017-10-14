@@ -10,7 +10,7 @@ namespace BankerGems
 /// </summary>
     public static class BankFactory
     {
-        private static List<Account> accounts = new List<Account>();
+        private static BankModel db = new BankModel(); 
         
         /// <summary>
     /// bankFactory creats an account
@@ -31,12 +31,14 @@ namespace BankerGems
             {
                 account.Deposit(initialDeposit);
             }
+            db.Accounts.Add(account);
+            db.SaveChanges();
             return account;
         }
 
-        public static List<Account> getAllAccounts()
+        public static List<Account> getAllAccounts(string emailAddress)
         {
-            return accounts;
+            return db.Accounts.Where(a => a.EmailAddress == emailAddress).ToList();
         }
     }
 }

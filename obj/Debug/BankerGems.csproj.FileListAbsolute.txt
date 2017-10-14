@@ -10,3 +10,7 @@ D:\Github\BankerGems\bin\Debug\BankerGems.pdb
 D:\Github\BankerGems\obj\Debug\BankerGems.csprojResolveAssemblyReference.cache
 D:\Github\BankerGems\obj\Debug\BankerGems.exe
 D:\Github\BankerGems\obj\Debug\BankerGems.pdb
+D:\Github\BankerGems\bin\Debug\EntityFramework.dll
+D:\Github\BankerGems\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\BankerGems\bin\Debug\EntityFramework.xml
+D:\Github\BankerGems\bin\Debug\EntityFramework.SqlServer.xml
