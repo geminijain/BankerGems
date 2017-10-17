@@ -14,3 +14,6 @@ D:\Github\BankerGems\bin\Debug\EntityFramework.dll
 D:\Github\BankerGems\bin\Debug\EntityFramework.SqlServer.dll
 D:\Github\BankerGems\bin\Debug\EntityFramework.xml
 D:\Github\BankerGems\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\BankerGems\obj\Debug\BankerGems.Migrations.InitialCreate.resources
+D:\Github\BankerGems\obj\Debug\BankerGems.csproj.GenerateResource.Cache
+D:\Github\BankerGems\obj\Debug\BankerGems.Migrations.Transactions.resources

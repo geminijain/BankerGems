@@ -38,6 +38,8 @@ namespace BankerGems
         [Required]
         public TypeOfAccount AccountType { get; set; }
         public DateTime CreatedDate { get; set; }
+
+        public virtual ICollection<Transaction> Transactions { get; set; }
         #endregion
 
         #region Constructors

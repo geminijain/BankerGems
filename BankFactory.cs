@@ -36,9 +36,52 @@ namespace BankerGems
             return account;
         }
 
-        public static List<Account> getAllAccounts(string emailAddress)
+        public static List<Account> GetAllAccounts(string emailAddress)
         {
             return db.Accounts.Where(a => a.EmailAddress == emailAddress).ToList();
+        }
+
+        public static void Deposit(int accountNumber, decimal amount)
+        {
+            var account = db.Accounts.Where(a => a.AccountNumber == accountNumber).FirstOrDefault();
+            if(account == null)
+                              return;
+            account.Deposit(amount);
+            
+            var transaction = new Transaction
+                {
+                TransactionDate = DateTime.UtcNow,
+                TypeOfTransaction = TransactionType.Credit,
+                Description =  "Branch deposit",
+                Amount = amount,
+                AccountNumber = account.AccountNumber
+                };
+            db.Transactions.Add(transaction);
+            db.SaveChanges();
+        }
+
+        public static void Withdraw(int accountNumber, decimal amount)
+        {
+            var account = db.Accounts.Where(a => a.AccountNumber == accountNumber).FirstOrDefault();
+            if(account == null)
+                              return;
+            account.Withdraw(amount);
+            
+            var transaction = new Transaction
+                {
+                TransactionDate = DateTime.UtcNow,
+                TypeOfTransaction = TransactionType.Debit,
+                Description =  "Branch Withdraw",
+                Amount = amount,
+                AccountNumber = account.AccountNumber
+                };
+            db.Transactions.Add(transaction);
+            db.SaveChanges();
+        }
+
+         public static List<Account> GetAllTransactions(string emailAddress)
+        {
+            return db.Transactions.Where(t => t.AccountNumber == accountNumber).OrderByDescending(t => t.TransactionDate).ToList();
         }
     }
 }
