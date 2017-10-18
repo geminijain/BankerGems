@@ -79,7 +79,7 @@ namespace BankerGems
             db.SaveChanges();
         }
 
-         public static List<Account> GetAllTransactions(string emailAddress)
+         public static List<Transaction> GetAllTransactions(int accountNumber)
         {
             return db.Transactions.Where(t => t.AccountNumber == accountNumber).OrderByDescending(t => t.TransactionDate).ToList();
         }
